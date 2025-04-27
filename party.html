@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18esimo</title>
+
+    <!-- Link al font Sugo Display tramite il tuo file locale -->
+    <style>
+        @font-face {
+            font-family: 'Sugo Display';
+            src: url('sugo.regular.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            font-family: 'Sugo Display', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+
+        .card {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            background-color: #111;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.2s ease-in-out;
+            overflow: hidden;
+            margin-right: 50px;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        .card .glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            filter: blur(50px);
+            animation: glow-animation 1.5s infinite alternate;
+        }
+
+        @keyframes glow-animation {
+            0% {
+                opacity: 0.4;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .header-image {
+            width: 180px;
+            height: 200px;
+            background: url('logo.gif') center/cover no-repeat;
+            border-radius: 10px;
+            display: block; /* Rende l'elemento un blocco per usare margini automatici */
+            margin-left: auto; /* Allinea a sinistra automaticamente */
+            margin-right: auto; /* Allinea a destra automaticamente */
+        }
+
+        .title {
+            font-size: 60px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #888;
+        }
+
+        /* Sezione delle informazioni a destra */
+        .info-container {
+            width: 500px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: transparent; /* Rimosso il background */
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center; /* Centra verticalmente il testo con l'icona */
+            margin: 20px 0;
+            padding: 10px;
+            background-color: transparent; /* Rimosso il contorno grigio */
+        }
+
+        .info-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 5px; /* Distanza tra l'immagine e il testo */
+        }
+
+        .info-item span {
+            font-size: 50px; /* Aumentato la dimensione del testo per data e orario */
+            color: #fff;
+            display: inline-block; /* Permette di avere la giusta dimensione per il testo */
+        }
+
+
+        .info-item .separator {
+            margin: 0 5px; /* Distanza tra immagine e testo */
+            color: #000000;
+            font-size: 50px;
+        }
+
+        .map-link {
+            background-color: #00aaff;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            text-decoration: none;
+            margin-top: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-btn img {
+            width: 25px; /* Immagine piccola accanto al testo */
+            height: 25px;
+            margin-right: 10px; /* Distanza tra l'immagine e il testo */
+        }
+
+        .whatsapp-btn:hover,
+        .map-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Spazio prima dei testi */
+
+        /* Footer della card con QR code e loghi */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            background: url('qrcode.png') center/contain no-repeat;
+            margin-right: 60px;
+        }
+
+        .footer-logos {
+            display: flex; 
+            width: 100%;
+        }
+
+        .footer-logos img {
+            width: 60px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Card con invito -->
+        <div class="card">
+            <div class="glow"></div>
+
+            <!-- Immagine grafica in alto -->
+            <div class="header-image"></div>
+
+            <!-- Titolo e sottotitolo -->
+            <div class="title">OFFICIAL PASS</div>
+            <div class="subtitle">Invito ufficiale al 18esimo terrone Foggiano emigratis a Terni senza olio di palma.<br><br>Dresscode previsto, vestirsi bene. Eventuali trasgressori affronteranno Vito Abbruzzese in un duello a spade laser.<br><br>L'evento può nuocere gravemente alla salute ed ai sensibili di cuore.<br><br>Tenere Fuori dalla portata dei Pisciaturi.</div>
+
+            <!-- Footer con QR code e loghi sponsor -->
+            <div class="footer">
+                <!-- QR Code -->
+                <div class="qr-code"></div>
+
+                <!-- Loghi degli Sponsor -->
+                <div class="footer-logos">
+                    <img src="favinoinc.png" alt="Sponsor 1">
+                    <img src="satanelli.png" alt="Sponsor 2">
+                    <img src="rci.PNG" alt="Sponsor 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione informazioni a destra -->
+        <div class="info-container">
+            <!-- Data e orario -->
+            <div class="info-item">
+                <img src="calendar.png" alt="Calendario">
+                <span>10.05.2025</span>
+                <span class="separator">/</span>
+                <img src="clock.png" alt="Orario">
+                <span>19h00</span>
+            </div>
+
+            <!-- Link Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d229.99400275083664!2d12.761125076199688!3d42.53516851445719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDMyJzA2LjUiTiAxMsKwNDUnNDAuOSJF!5e0!3m2!1sit!2sit!4v1745695123685!5m2!1sit!2sit" width="440" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <!-- Pulsante WhatsApp con immagine -->
+            <a href="https://whatsapp.com/channel/0029VaELms0HFxP64YuQaK1I" target="_blank" class="whatsapp-btn">
+                <img src="whatsapp.png" alt="WhatsApp">
+                CANALE WHATSAPP
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
